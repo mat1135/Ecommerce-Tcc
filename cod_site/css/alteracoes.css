@@ -1,10 +1,26 @@
 .logo_loc{
-    margin-left: 130px;
-    margin-top: 100px;
+    float: left;
+    margin-top: 20px;
+    margin-left: 250px;
+    cursor: pointer;
+    cursor: hand;
 }
 
 #deslocamento{
     display: block;
     float: right;
     margin: 25px 20px 0px 0px;
+}
+
+span {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 12px;
+}
+
+#link_desloc {
+    margin: -50px;
+}
+
+.carrinho {
+    background-color: rgb(235, 235, 235);
 }
