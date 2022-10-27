@@ -1,3 +1,9 @@
+<?php
+	require_once 'classes/Cliente.php';
+	$id = $_GET['id'];
+  	$cliente = new Cliente($id);
+?>
+
 <!doctype html>
 <html lang="pt-br">
   <head>
@@ -92,7 +98,6 @@
 
     </script>
 </header>
-
 <div class="container-fluid">
   <div class="row">
     <!-- Main NAV -->
@@ -117,69 +122,69 @@
                             <div class="tab-content">
                                 <div class="tab-pane active" id="pessoais">
                                     <div class="post"><br>
-                                        <form id="form1" name="form1" class="form-horizontal" action="../adm/cliente-gravar.php" method="post" onsubmit="return checkCheckBox(this)" enctype="multipart/form-data">
+                                        <form id="form1" name="form1" class="form-horizontal" action="../adm/cliente-editar-gravar.php" method="post" onsubmit="return checkCheckBox(this)" enctype="multipart/form-data">
                                             <div class="row">
                                                 <div class="col-xs-12">
-                                                    <input type="hidden" name="inputId" value="">
+                                                    <input type="hidden" name="inputId" value="<?php echo $cliente->id ?>">
 
                                                     <div class="form-group">
                                                         <label for="inputNome" class="col-md-2 control-label">Nome:</label>
                                                         <div class="col-sm-5">
-                                                            <input type="text" class="form-control" name="inputNome" id="inputNome" >
+                                                            <input type="text" class="form-control" name="inputNome" id="inputNome" value="<?php echo $cliente->cidade ?>" />
                                                         </div>
                                                         <label for="inputData" class="col-md-1 control-label">Data de nascimento:</label>
                                                         <div class="col-sm-4">
-                                                            <input type="date" class="form-control" name="inputData" id="inputData" >
+                                                            <input type="date" class="form-control" name="inputData" id="inputData" value="<?php echo $cliente->cidade ?>"/>
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="inputTelefone" class="col-md-2 control-label">Telefone:</label>
                                                         <div class="col-sm-3">
-                                                            <input type="text" class="form-control" name="inputTelefone" id="inputTelefone" data-inputmask="'mask': ['(99) 99999-9999']" data-mask="" inputmode="text"/>
+                                                            <input type="text" class="form-control" name="inputTelefone" id="inputTelefone" data-inputmask="'mask': ['(99) 99999-9999']" data-mask="" inputmode="text" value="<?php echo $cliente->telefone ?>"/>
                                                         </div>                                        
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="inputCpf" class="col-md-2 control-label">CPF:</label>
                                                         <div class="col-sm-3">
-                                                            <input type="text" class="form-control" name="inputCpf" id="inputCpf" maxlength="11"/>
+                                                            <input type="text" class="form-control" name="inputCpf" id="inputCpf" maxlength="11" value="<?php echo $cliente->cpf ?>"/>
                                                         </div>                                        
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="inputEmail" class="col-md-2 control-label">Email:</label>
                                                         <div class="col-sm-5">
-                                                            <input type="text" class="form-control" name="inputEmail" id="inputEmail"/>
+                                                            <input type="text" class="form-control" name="inputEmail" id="inputEmail" value="<?php echo $cliente->email ?>"/>
                                                         </div>                                        
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="inputSenha" class="col-md-2 control-label">Senha:</label>
                                                         <div class="col-sm-3">
-                                                            <input type="password" class="form-control" name="inputSenha" id="inputSenha"/>
+                                                            <input type="password" class="form-control" name="inputSenha" id="inputSenha" value="<?php echo $cliente->senha ?>" />
                                                         </div>                                        
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="cep" class="col-md-2 control-label">Cep:</label>
                                                         <div class="col-sm-3">
-                                                            <input type="text" class="form-control" name="cep" id="cep"maxlength="9" onblur="pesquisacep(this.value);"/>
+                                                            <input type="text" class="form-control" name="cep" id="cep"maxlength="9" onblur="pesquisacep(this.value);" value="<?php echo $cliente->cep ?>" />
                                                         </div>                                        
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="inputRua" class="col-md-2 control-label">Rua:</label>
                                                         <div class="col-sm-5">
-                                                            <input type="text" class="form-control" name="inputRua" id="inputRua" >
+                                                            <input type="text" class="form-control" name="inputRua" id="inputRua" value="<?php echo $cliente->rua ?>" />
                                                         </div>
                                                         <label for="inputNumero" class="col-md-1 control-label">Numero:</label>
                                                         <div class="col-sm-2">
-                                                            <input type="text" class="form-control" name="inputNumero" id="inputNumero" >
+                                                            <input type="text" class="form-control" name="inputNumero" id="inputNumero" value="<?php echo $cliente->numero ?>"/>
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="inputBairro" class="col-md-2 control-label">Bairro:</label>
                                                         <div class="col-sm-4">
-                                                            <input type="text" class="form-control" name="inputBairro" id="inputBairro" >
+                                                            <input type="text" class="form-control" name="inputBairro" id="inputBairro" value="<?php echo $cliente->bairro ?>"/>
                                                         </div>
                                                         <label for="inputCidade" class="col-md-1 control-label">Cidade:</label>
                                                         <div class="col-sm-4">
-                                                            <input type="text" class="form-control" name="inputCidade" id="inputCidade" >
+                                                            <input type="text" class="form-control" name="inputCidade" id="inputCidade" value="<?php echo $cliente->cidade ?>"/>
                                                         </div>
                                                     </div>                          
                                                 </div>
