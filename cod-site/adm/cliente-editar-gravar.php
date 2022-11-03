@@ -1,5 +1,5 @@
 <?php
-require_once 'classes/Cliente.php';
+require_once '../classes/Cliente.php';
 
 $id = $_POST['id'];
 $cliente = new Cliente($id);

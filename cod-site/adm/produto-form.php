@@ -64,7 +64,10 @@
                                                         </div>
                                                         <label for="inputMarca" class="col-md-1 control-label">Marca:</label>
                                                         <div class="col-sm-4">
-                                                            <input type="text" class="form-control" name="inputMarca" id="inputMarca" >
+                                                            <select name="inputMarca" id="inputMarca">
+                                                                <option value="nike">nike</option>
+                                                                <option value="adidas">adidas</option>
+                                                            </select>
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
@@ -74,7 +77,11 @@
                                                         </div>
                                                         <label for="inputTipo" class="col-md-1 control-label">Tipo:</label>
                                                         <div class="col-sm-4">
-                                                            <input type="text" class="form-control" name="inputTipo" id="inputTipo" >
+                                                            <select name="inputTipo" id="inputTipo">
+                                                                <option value="">TENIS</option>
+                                                                <option value="">ROUPAS</option>
+                                                                <option value="">ACESSORIOS</option>
+                                                            </select>
                                                         </div>
                                                     </div>                                  
                                                     <div class="form-group">
@@ -82,26 +89,62 @@
                                                         <div class="col-sm-5">
                                                             <input type="text" class="form-control" name="inputPreco" id="inputPreco" >
                                                         </div>
-                                                        <label for="inputDescricao" class="col-md-1 control-label">Descrição:</label>
+                                                        <fieldset>
+                                                            <legend>Tamanhos</legend>
+                                                            <div>
+                                                            <input type="checkbox" id="scales" name="scales" checked>
+                                                            <label for="scales">35</label>
+                                                            </div>
+                                                            <div>
+                                                            <input type="checkbox" id="scales" name="scales" checked>
+                                                            <label for="scales">36</label>
+                                                            </div>
+                                                            <div>
+                                                            <input type="checkbox" id="scales" name="scales" checked>
+                                                            <label for="scales">37</label>
+                                                            </div>
+                                                            <div>
+                                                            <input type="checkbox" id="scales" name="scales" checked>
+                                                            <label for="scales">38</label>
+                                                            </div>
+                                                            <div>
+                                                            <input type="checkbox" id="scales" name="scales" checked>
+                                                            <label for="scales">39</label>
+                                                            </div>
+                                                            <div>
+                                                            <input type="checkbox" id="scales" name="scales" checked>
+                                                            <label for="scales">40</label>
+                                                            </div>
+                                                            <div>
+                                                            <input type="checkbox" id="scales" name="scales" checked>
+                                                            <label for="scales">41</label>
+                                                            </div>
+                                                            <div>
+                                                            <input type="checkbox" id="scales" name="scales" checked>
+                                                            <label for="scales">42</label>
+                                                            </div>
+                                                            <div>
+                                                            <input type="checkbox" id="scales" name="scales" checked>
+                                                            <label for="scales">43</label>
+                                                            </div>
+                                                            <div>
+                                                            <input type="checkbox" id="horns" name="horns">
+                                                            <label for="horns">45</label>
+                                                            </div>
+                                                        </fieldset>
+
+                                                        <label for="inputDescricao" class="col-md-3 control-label">Descrição do produto:</label>
                                                         <div class="col-sm-2">
-                                                            <input type="text" class="form-control" name="inputDescricao" id="inputDescricao" >
+                                                          <textarea name="inputDescricao" id="inputDescricao" cols="50" rows="3"></textarea>
                                                         </div>
                                                         <div class="col-xs-12">
                                                           
                                                     <input type="hidden" name="inputId" value="">
 
                                                     <div class="form-group">
-                                                        <label for="inputTitulo" class="col-md-2 control-label">Título:</label>
-                                                        <div class="col-sm-9">
-                                                            <input type="text" class="form-control" id="inputTitulo" name="inputTitulo" >
-                                                        </div>                                                        
-                                                    </div>
-
-                                                    <div class="form-group">
                                                     <label for="inputImagem" class="col-md-2 control-label">Imagem:</label>
                                                         <div class="col-sm-9">
-                                                            <input type="file" name="arquivo" id="arquivo" value="Alterar foto" /></label>
-                                                            <p><i class="fa fa-file-image-o margin-r-5"></i>Selecione a sua imagem de destaque do imóvel e clique no botão "Salvar dados"; Somente imagens JPG e PNG - Recomendado: 800x600 pixels</p>
+                                                            <input class="" type="file" name="arquivo" id="arquivo" value="Alterar foto" /></label>
                                                         </div>
                                                     </div>
 
@@ -133,20 +176,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Coluna assistente -->
-                <div class="col-xs-12 col-sm-4">
-                  <div class="box box-default dicas">
-                    <div class="box-body box-profile">
-                      <div class="direct-chat-msg">
-                        <div class="direct-chat-info clearfix">
-                          <span class="direct-chat-name pull-left">Área de informações</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- Coluna assistente -->
             </div> <!-- fim row -->
         </section>
       </div>

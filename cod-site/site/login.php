@@ -35,9 +35,9 @@
             <div>
                 <img src="images/EASYpng.png" alt="">
             </div>
-            <form action="index">
-                <input type="text" name="nome" placeholder="nome de usuario" autofocus>
-                <input type="password" name="senha" placeholder="digite sua senha">
+            <form action="user-login.php" name="form" id="form" method="POST">
+                <input type="text" name="nome" id="nome" placeholder="nome de usuario" autofocus>
+                <input type="password" name="senha" id="senha" placeholder="digite sua senha">
                 <input type="submit" value="entrar">
             </form>
             <p>Ainda não é cadastrado?<a class="hover" href="cadastro.php">Crie agora</a></p>

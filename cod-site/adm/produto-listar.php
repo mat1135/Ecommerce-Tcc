@@ -12,7 +12,7 @@
     <meta name="description" content="">
 
     <title>EASY SNKRS/ADM</title>
-    <link rel="icon" href="images/E.png" type="image/gif" />
+    <link rel="icon" href="../images/E.png" type="image/gif" />
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/dashboard/">
     <link rel="stylesheet" href="../css/adm.css">
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -71,7 +71,7 @@
                                             <td><?php echo $linha['id'] ?></a></td>
                                             <td><?php echo $linha['nome'] ?></a></td>
                                             <td><?php echo $linha['marca'] ?></a></td>
-                                            <td><?php echo "<img src='uploads/".$linha['imagem']."' width='200'>" ?></td>
+                                            <td><?php echo "<img src='../uploads/".$linha['imagem']."' width='100'>" ?></td>
                                             <td>
                                             <a href="#" 
                                                 class="btn btn-sm btn-outline-dark">Detalhes</a>              

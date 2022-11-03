@@ -1,5 +1,5 @@
 <?php
-	require_once 'classes/Cliente.php';
+	require_once '../classes/Cliente.php';
 	$id = $_GET['id'];
   	$cliente = new Cliente($id);
 ?>
@@ -122,19 +122,20 @@
                             <div class="tab-content">
                                 <div class="tab-pane active" id="pessoais">
                                     <div class="post"><br>
-                                        <form id="form1" name="form1" class="form-horizontal" action="../adm/cliente-editar-gravar.php" method="post" onsubmit="return checkCheckBox(this)" enctype="multipart/form-data">
+                                        <form id="form1" name="form1" class="form-horizontal" action="cliente-editar-gravar.php" method="post" onsubmit="return checkCheckBox(this)" enctype="multipart/form-data">
                                             <div class="row">
                                                 <div class="col-xs-12">
-                                                    <input type="hidden" name="inputId" value="<?php echo $cliente->id ?>">
+
+                                                    <input type="hidden" name="id" value="<?php echo $cliente->id ?>">
 
                                                     <div class="form-group">
                                                         <label for="inputNome" class="col-md-2 control-label">Nome:</label>
                                                         <div class="col-sm-5">
-                                                            <input type="text" class="form-control" name="inputNome" id="inputNome" value="<?php echo $cliente->cidade ?>" />
+                                                            <input type="text" class="form-control" name="inputNome" id="inputNome" value="<?php echo $cliente->nome ?>" />
                                                         </div>
                                                         <label for="inputData" class="col-md-1 control-label">Data de nascimento:</label>
                                                         <div class="col-sm-4">
-                                                            <input type="date" class="form-control" name="inputData" id="inputData" value="<?php echo $cliente->cidade ?>"/>
+                                                            <input type="date" class="form-control" name="inputData" id="inputData" value="<?php echo $cliente->datanasc ?>"/>
                                                         </div>
                                                     </div>
                                                     <div class="form-group">

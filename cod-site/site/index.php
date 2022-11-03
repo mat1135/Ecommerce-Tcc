@@ -88,13 +88,21 @@
     </div>
     <div class="linha"></div>
     <div class="row">
-      <div class="col-lg-3">
-      <?php foreach ($lista as $linha): ?>
 
+      <?php
+      $limite = 0;
+      foreach ($lista as $linha):
+        
+        if($limite < 8)
+        {
+          $limite++;
+        ?>
+
+        <div class="col-lg-3">
           <div class="box">
             <div class="img-box">
-              <a href="">
-                <?php echo "<img src='uploads/".$linha['imagem']."'>" ?>
+              <a href="pgprod.php">
+                <?php echo "<img src='../uploads/".$linha['imagem']."' width='200px'>" ?>
               </a>
             </div>
             <div class="detail-box">
@@ -108,9 +116,11 @@
             </div>
           </div>
       </div>
-    </div>
-      <?php endforeach ?>
 
+      <?php } ?>
+
+      <?php endforeach ?>
+    </div>
 
 
       <div data-mc-src="184bdf4c-e31a-427d-8c28-87ddfa3be7c0#null"></div>
@@ -127,6 +137,7 @@
   <div class="newsletter5">
         <div class="news">
             <div class="container-custom">
+
                 <div class="row">
                     <div class="col-xs-12 col-md-5  news-text">
                         <div>
@@ -146,6 +157,8 @@
                         <small>Ao clicar em cadastrar, você; estar&aacute; aceitando receber emails promocionais</small>
                     </div>
                 </div>
+
+
             </div>
         </div>
   </div>  

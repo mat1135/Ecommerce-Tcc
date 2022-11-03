@@ -1,0 +1,23 @@
+/* filtro */
+
+.filtro {
+    background-color: #191E1F;
+    padding-top: 10px;
+    display: inline-block;
+}
+
+.filtro p {
+    text-align: center;
+    color: #fff;
+}
+
+.barra {
+    display: inline-block;
+    background-color: #191E1F;
+    padding-top: 10px;
+}
+
+.barra p{
+    text-align: center;
+    color: #fff;
+}
