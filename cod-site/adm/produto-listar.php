@@ -75,7 +75,7 @@
                                             <td>
                                             <a href="#" 
                                                 class="btn btn-sm btn-outline-dark">Detalhes</a>              
-                                            <a href="#" 
+                                            <a href="produto-editar.php?id=<?php echo $linha['id'] ?>" 
                                                 class="btn btn-sm btn-outline-dark">Editar</a>
                                             <a href="produto-excluir.php?id=<?php echo $linha['id'] ?>"
                                                 class="btn btn-sm btn-danger">Excluir</a>

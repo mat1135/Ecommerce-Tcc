@@ -8,6 +8,14 @@ $produto->marca = $_POST['inputMarca'];
 $produto->peso = $_POST['inputPeso'];
 $produto->tipo = $_POST['inputTipo'];
 $produto->descricao = $_POST['inputDescricao'];
+$produto->descricao = $_POST['inputTam39'];
+$produto->descricao = $_POST['inputTam40'];
+$produto->descricao = $_POST['inputTam41'];
+$produto->descricao = $_POST['inputTam42'];
+$produto->descricao = $_POST['inputTamP'];
+$produto->descricao = $_POST['inputTamM'];
+$produto->descricao = $_POST['inputTamG'];
+$produto->tam = $_POST['inputTamGG'];
 $produto->preco = $_POST['inputPreco'];
 
 if(isset($_FILES['arquivo']['name']) && $_FILES["arquivo"]["error"] == 0){

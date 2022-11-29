@@ -15,6 +15,7 @@ class Produto
     {
         if ($id) {
             $this->id = $id;
+            $this->carregar();
         }
     }
     
@@ -31,23 +32,77 @@ class Produto
 
     public function boxprod()
     {
-        $sql = "SELECT nome, preco, imagem
-                FROM produtos 
-                ORDER BY id";   
-        $conexao = new PDO('mysql:host=127.0.0.1;dbname=easysneakers', 'root', '');
-        $resultado = $conexao->query($sql);
-        $lista = $resultado->fetchAll();
-        return $lista;       
-    }
-
-    public function detalhes()
-    {
-        $sql = "SELECT nome, preco, imagem, descricao
+        $sql = "SELECT id, nome, preco, imagem
                 FROM produtos";   
         $conexao = new PDO('mysql:host=127.0.0.1;dbname=easysneakers', 'root', '');
         $resultado = $conexao->query($sql);
-        $detalhe = $resultado->fetchAll();
-        return $detalhe;       
+        $lista = $resultado->fetchAll();
+        return $lista;     
+    }
+
+    // FILTROS
+
+    public function consTenis()
+    {
+        $sql = "SELECT * FROM produtos  WHERE tipo = 'Tenis'";   
+        $conexao = new PDO('mysql:host=127.0.0.1;dbname=easysneakers', 'root', '');
+        $resultado = $conexao->query($sql);
+        $lista = $resultado->fetchAll();
+        return $lista;     
+    }
+
+    public function consAces()
+    {
+        $sql = "SELECT * FROM produtos  WHERE tipo = 'Acessorios'";   
+        $conexao = new PDO('mysql:host=127.0.0.1;dbname=easysneakers', 'root', '');
+        $resultado = $conexao->query($sql);
+        $lista = $resultado->fetchAll();
+        return $lista;     
+    }
+
+    public function consRoupas()
+    {
+        $sql = "SELECT * FROM produtos  WHERE tipo = 'Roupas'";   
+        $conexao = new PDO('mysql:host=127.0.0.1;dbname=easysneakers', 'root', '');
+        $resultado = $conexao->query($sql);
+        $lista = $resultado->fetchAll();
+        return $lista;     
+    }
+
+    public function consOff()
+    {
+        $sql = "SELECT * FROM produtos  WHERE marca = 'off'";   
+        $conexao = new PDO('mysql:host=127.0.0.1;dbname=easysneakers', 'root', '');
+        $resultado = $conexao->query($sql);
+        $lista = $resultado->fetchAll();
+        return $lista;     
+    }
+
+    public function consCactus()
+    {
+        $sql = "SELECT * FROM produtos  WHERE marca = 'Cactus'";   
+        $conexao = new PDO('mysql:host=127.0.0.1;dbname=easysneakers', 'root', '');
+        $resultado = $conexao->query($sql);
+        $lista = $resultado->fetchAll();
+        return $lista;     
+    }
+
+    public function consSupre()
+    {
+        $sql = "SELECT * FROM produtos  WHERE marca = 'Supreme'";   
+        $conexao = new PDO('mysql:host=127.0.0.1;dbname=easysneakers', 'root', '');
+        $resultado = $conexao->query($sql);
+        $lista = $resultado->fetchAll();
+        return $lista;     
+    }
+    
+    public function consBape()
+    {
+        $sql = "SELECT * FROM produtos  WHERE marca = 'bape'";   
+        $conexao = new PDO('mysql:host=127.0.0.1;dbname=easysneakers', 'root', '');
+        $resultado = $conexao->query($sql);
+        $lista = $resultado->fetchAll();
+        return $lista;     
     }
 
     public function inserir()
@@ -60,12 +115,11 @@ class Produto
             '" . $this->descricao . "',
             '" . $this->preco . "', 
             '" . $this->imagem . "')";   
-            
-    //echo $sql;
-    //die();
     $conexao = new PDO('mysql:host=127.0.0.1;dbname=easysneakers', 'root', '');
     $conexao->exec($sql);
     }  
+
+    // FUNÇÕES DE BOTÃO
 
     public function excluir()
     {
@@ -76,38 +130,29 @@ class Produto
 
     public function carregar()
     {
-        $sql = "SELECT * FROM clientes WHERE id=". $this->id;
+        $sql = "SELECT * FROM produtos WHERE id=". $this->id;
         $conexao = new PDO('mysql:host=127.0.0.1;dbname=easysneakers', 'root', '');
         $resultado = $conexao->query($sql);
         $linha = $resultado->fetch();
         $this->nome = $linha['nome'];
-        $this->datanasc = $linha['datanasc'];
-        $this->telefone = $linha['telefone'];
-        $this->cpf = $linha['cpf'];
-        $this->email = $linha['email'];
-        $this->senha = $linha['senha'];
-        $this->cep = $linha['cep'];
-        $this->rua = $linha['rua'];
-        $this->numero = $linha['numero'];
-        $this->bairro = $linha['bairro'];
-        $this->cidade = $linha['cidade'];
-
+        $this->marca = $linha['marca'];
+        $this->peso = $linha['peso'];
+        $this->tipo = $linha['tipo'];
+        $this->descricao = $linha['descricao'];
+        $this->preco = $linha['preco'];
+        $this->imagem = $linha['imagem'];
     }
 
     public function atualizar()
     {
-        $sql = "UPDATE clientes SET 
+        $sql = "UPDATE produtos SET 
                     nome = '$this->nome' ,
-                    datanasc = '$this->datanasc' ,
-                    telefone = '$this->telefone' ,
-                    cpf = '$this->cpf' ,
-                    email = '$this->email' ,
-                    senha = '$this->senha' ,
-                    cep = '$this->cep' ,
-                    rua = '$this->rua' ,
-                    numero = '$this->numero' ,
-                    bairro = '$this->bairro' ,
-                    cidade = '$this->cidade'                    
+                    marca = '$this->marca' ,
+                    peso = '$this->peso' ,
+                    tipo = '$this->tipo' ,
+                    descricao = '$this->descricao' ,
+                    preco = '$this->preco' ,
+                    imagem = '$this->imagem'                    
                 WHERE id = $this->id ";
         $conexao = new PDO('mysql:host=127.0.0.1;dbname=easysneakers', 'root', '');
         $conexao->exec($sql);

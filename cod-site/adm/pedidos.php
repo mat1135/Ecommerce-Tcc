@@ -1,3 +1,9 @@
+<?php
+  require_once '../classes/Vendas.php';
+  $venda = new Venda();
+  $lista = $venda->listar();
+?>
+
 <!doctype html>
 <html lang="pt-br">
   <head>
@@ -36,21 +42,49 @@
 
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Produtos</h1>
+        <h1 class="h2">Pedidos</h1>
         
         </div>
         <section class="content container-fluid">
             <div class="row">
-              <center><h2>PAGINA EM DESENVOLVIMENTO</h2></center>
-            </div> 
-        </section> 
+                <div class="col-xs-12 col-sm-12">
+                    <div class="box">
+                        <div class="box-body">
+                            <table id="example1" class="table table-bordered table-striped">
+                                <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nome do Produto</th>
+                                    <th>Tipo do Produto</th>
+                                    <th>Quantidade do Produto</th>                                    
+                                    <th class="acao">Ações</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                    <?php foreach ($lista as $linha): ?>
+                                        <tr>
+                                            <td><?php echo $linha['id'] ?></a></td>
+                                            <td><?php echo $linha['nome_prod'] ?></a></td>
+                                            <td><?php echo $linha['tipo_prod'] ?></a></td>
+                                            <td><?php echo $linha['qnt_prod'] ?></a></td>
+                                            <td>
+                                            <a href="#" class="btn btn-sm btn-outline-dark">Visualizar</a>                                                    
+                                            </td>
+                                        </tr>
+                                    <?php endforeach ?>                          
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div> <!-- fim row -->
+        </section>
+    </div>
     </main>
   </div>
 </div>
-
-
-
-
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
 
       <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script><script src="dashboard.js"></script>

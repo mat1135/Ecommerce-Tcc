@@ -130,3 +130,14 @@ form [type="submit"]{
     cursor: pointer;
 }
 
+.fundodad {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #d3d3d3;
+    border: rgb(255, 255, 255);
+    color: #3b3b3b;
+    outline: none;
+    height: 45px;
+    border-radius: 8px;
+}

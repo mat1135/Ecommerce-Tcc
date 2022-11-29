@@ -1,7 +1,7 @@
 <?php
   require_once '../classes/Produto.php';
-  $produto = new Produto();
-  $detalhe = $produto->detalhes();
+  $id = $_GET['id'];
+  $produto = new Produto($id);
 ?>
 
 <!DOCTYPE html>
@@ -22,67 +22,132 @@
   <title>Easy Sneakers</title>
 
 
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  <link href="../css/alteracoes.css" rel="stylesheet" /> 
+  <link href="../css/bootstrap.css" rel="stylesheet" /> 
+  <link href="../css/alteracoes.css" rel="stylesheet" />
 
 </head>
 
 <body>
 
   <!--menu-->
-  <?php include_once "menu.html" ?>
+  
+  <?php include_once "menu.php" ?>
 
-  <!--colocar dentro disso-->
+  <!--  PAGINA  -->
+  <div class="espacamento"></div>
   <div class="container">
-  <article class="row produtos-compra">
-  <figure class="col-md-7"> 
-    <?php echo "<img src='../uploads/".$detalhe['imagem']."' width='200px'>" ?>
-  </figure>
-  <section class="col-md-5 mb-3 d-flex flex-column justify-content-around">
-  <article class="produtos-conteudo"> 
-  <h1>
-    <?php echo $detalhe['nome']?>
-  </h1>
-  <p class="pprod">
-    marca:
-  </p>
-  <p class="pprod">
-    tipo: 
-  </p>
-  </article>
-  <article class="produtos-preco">
-  <strong> 
-    R$ <?php echo $detalhe['preco']?>
-    <span class="d-block">
-      Em até 12x sem juros
-  </span>
-  </strong>
-  <form action="#">
-  <div class="form-group">
-                <label for="produtos-quantidade-itens">Quantidade</label>
-                <select class="form-control" id="produtos-quantidade-itens">
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                </select>
-              </div>
+    <article class="row produtos-compra">
+      <figure class="col-md-7"> 
+        <?php echo "<img src='../uploads/".$produto->imagem."' class='img-fluid'>" ?>
+      </figure>
+      <form action="vendas-gravar.php" method="POST" onsubmit="return checkCheckBox(this)" enctype="multipart/form-data">
+      <section class="form-group">
+        <article class="produtos-conteudo"> 
+          <h1 name="inputNomeProd" id="inputNomeProd">
+            <?php echo $produto->nome ?>           
+          </h1>
+          <span class="pprod">
+            Marca:
+          </span>
+          <span name="inputMarcaProd" id="inputMarcaProd">
+            <?php echo $produto->marca ?>
+          </span>
+          <br>
+          <span class="pprod">
+            Tipo:
+          </span>
+          <span name="inputTipoProd" id="inputTipoProd">
+            <?php echo $produto->tipo ?>
+          </span>
+          <br>
+          <label for="inputTamanhoProd" class="pprod control-label">Tamanhos:</label>
+            <div class="form-group">
+              <select class="form-control col-sm-5" name="inputTamanhoProd" id="inputTamanhoProd">
+                <option value="39">39</option>
+                <option value="40">40</option>
+                <option value="41">41</option>
+                <option value="42">42</option>
+              </select>
+            </div>    
+          <label for="inputQtnProd" class="pprod control-label">Quantidade:</label>
+            <div class="form-group">
+              <select class="form-control col-sm-5" name="inputQtnProd" id="inputQtnProd">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
+            </div> 
+            <button onclick="compraFinalizada" type="submit" class="btn btn-success col-md-12">Comprar</button>
+        </article>
+      </section>
+      </form>
+    </article>
+  </div>  
+  <div class="container">
+  <div class="linha"></div>
+  <div class="espacamento"></div>
+    <span class="pprod" style="font-size: 30px; padding: 20px;">Descrição:</span>
+    <br>
+    <span style="font-size: 18px; padding: 30px;"><?php echo $produto->descricao?><span>
+    <div class="espacamento"></div>
+  </div>
+  <div class="container">
+  <div class="linha"></div>
+    <h2 style="font-size: 30px; padding: 20px;">Produtos Similares:</h2>
+    <div class="row">
 
-              <button type="submit" class="btn btn-success col-md-12">Comprar</button>
-  </form>
-  </article>
-  </section>
-  </article>
+    <?php
+      require_once '../classes/Produto.php';
+      $produto = new Produto();
+      $lista = $produto->boxprod();
+
+    $limite = 0;
+    foreach ($lista as $linha):
+      
+      if($limite < 4)
+      {
+        $limite++;
+      ?>
+
+      <div class="col-lg-3">
+        <div class="box">
+          <div class="img-box">
+            <a href="pgprod.php?id=<?php echo $linha['id'] ?>">
+              <?php echo "<img src='../uploads/".$linha['imagem']."' width='200px'>" ?>
+            </a>
+          </div>
+          <div class="detail-box">
+            <h5 class="h5-center">
+              <?php echo $linha['nome']; ?>
+            </h5>
+            <div class="price_box">
+              <abbr class="circulor">R$</abbr>
+              <span class="price_heading"><?php echo $linha['preco']  ?></span>
+            </div>
+          </div>
+        </div>
+    </div>
+    <?php } ?>
+    <?php endforeach ?>
+    </div>
   </div>
 
 
   <!-- footer section -->
   <?php include_once "rodape.html" ?>
 
-
-
-
-  <!-- JavaScript (Opcional) -->
+  <!-- JavaScript -->
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+        function compraFinalizada() {
+            Swal.fire({
+                icon: 'success',
+                title: 'Compra realizada com sucesso!',
+                showConfirmButton: false,
+                timer: 10000
+            })
+        }
+    </script>
   <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

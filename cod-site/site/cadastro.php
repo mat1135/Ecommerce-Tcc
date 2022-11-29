@@ -16,7 +16,7 @@
   <title>Easy Sneakers</title>
 
 
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link href="../css/bootstrap.css" rel="stylesheet" /> 
   <link href="../css/alteracoes.css" rel="stylesheet" /> 
   <link rel="stylesheet" href="../css/logcad.css">
 
@@ -88,7 +88,7 @@
     };
 
     </script>
-  <?php include_once "menu.html" ?>
+  <?php include_once "menu.php" ?>
 
   <!-- end header section -->
 
@@ -99,7 +99,7 @@
     <section class="area-cad">
         <div class="cad">
 
-            <form action="cliente-gravar.php" method="POST">
+            <form action="cliente-gravar.php" method="POST" onsubmit="return checkCheckBox(this)" enctype="multipart/form-data">
                 <p class="p-logcad">Digite seu nome completo:</p>
                 <input type="text" name="inputNome" id="inputNome" placeholder="nome completo" autofocus>
 
@@ -139,32 +139,6 @@
     </section>
   </div>
 
-    <!-- cadastro rapido -->
-    <div class="newsletter5">
-        <div class="news">
-            <div class="container-custom">
-                <div class="row">
-                    <div class="col-xs-12 col-md-5  news-text">
-                        <div>
-                            <p>
-                                Cadastre seu e-mail para receber ofertas 
-                            exclusivas da <strong>nossa loja</strong>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-md-6 news-form">
-                        <form id="form" action="/mvc/store/newsletter/?loja=680475" method="POST">
-                            <input type="hidden" name="loja" value="680475">
-                            <input type="text" name="name" placeholder="Seu nome">
-                            <input name="email" type="email" placeholder="Seu email">
-                            <button class="btn  news-button color-detail-bg">Cadastrar</button>
-                        </form>
-                        <small>Ao clicar em cadastrar, você; estar&aacute; aceitando receber emails promocionais</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>  
 
     <?php include_once "rodape.html" ?>
   <!-- footer section -->

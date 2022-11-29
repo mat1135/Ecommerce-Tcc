@@ -1,7 +1,7 @@
 <?php
   require_once '../classes/Produto.php';
   $produto = new Produto();
-  $lista = $produto->boxprod();
+  $lista = $produto->consTenis();
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +22,7 @@
   <title>Easy Sneakers</title>
 
 
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link href="../css/bootstrap.css" rel="stylesheet" /> 
   <link href="../css/alteracoes.css" rel="stylesheet" /> 
   <link href="../css/itens.css" rel="stylesheet" /> 
   <style>
@@ -37,7 +37,7 @@
 
 
       <!--menu-->
-      <?php include_once "menu.html" ?>
+      <?php include_once "menu.php" ?>
 
       <!-- folha -->
       <div class="container">
@@ -55,9 +55,11 @@
         <div class="col-lg-3">
           <div class="box">
             <div class="img-box">
-              <a href="pgprod.php">
-                <?php echo "<img src='../uploads/".$linha['imagem']."' width='200px'>" ?>
-              </a>
+
+              <a href="pgprod.php?id=<?php echo $linha['id'] ?>" class="pg"><?php echo "<img src='../uploads/".$linha['imagem']."' width='200px'>" ?></a>
+
+             
+
             </div>
             <div class="detail-box">
               <h5 class="h5-center">

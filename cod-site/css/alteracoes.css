@@ -241,7 +241,7 @@ top: 10px;
 /* footer section*/
 
 .footer_section {
-    background-color: #fafafa;
+    background-color: #ffffff;
     text-align: center;
 }
   
@@ -513,3 +513,8 @@ top: 10px;
 .pprod {
   color: #a1a1a1;
 }
+
+.neg {
+  color: #000;
+}
+

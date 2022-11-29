@@ -1,13 +1,15 @@
 /* filtro */
 
 .filtro {
+    display: inline-block;
     background-color: #191E1F;
     padding-top: 10px;
-    display: inline-block;
 }
 
 .filtro p {
-    text-align: center;
+    display: flex;
+    align-content: center;
+    justify-content: center;
     color: #fff;
 }
 
@@ -18,6 +20,8 @@
 }
 
 .barra p{
-    text-align: center;
+    display: flex;
+    align-content: center;
+    justify-content: center;
     color: #fff;
 }

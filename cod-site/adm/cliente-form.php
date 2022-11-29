@@ -147,7 +147,7 @@
                                                     <div class="form-group">
                                                         <label for="inputEmail" class="col-md-2 control-label">Email:</label>
                                                         <div class="col-sm-5">
-                                                            <input type="text" class="form-control" name="inputEmail" id="inputEmail"/>
+                                                            <input type="email" class="form-control" name="inputEmail" id="inputEmail"/>
                                                         </div>                                        
                                                     </div>
                                                     <div class="form-group">

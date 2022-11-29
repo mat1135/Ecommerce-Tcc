@@ -52,11 +52,10 @@
                             <div class="tab-content">
                                 <div class="tab-pane active" id="pessoais">
                                     <div class="post"><br>
-                                        <form id="form1" name="form1" class="form-horizontal" action="produto-gravar.php" method="post" onsubmit="return checkCheckBox(this)" enctype="multipart/form-data">
+                                        <form id="Produto" name="Produto" class="form-horizontal" action="produto-gravar.php" method="post" onsubmit="return checkCheckBox(this)" enctype="multipart/form-data">
                                             <div class="row">
                                                 <div class="col-xs-12">
                                                     <input type="hidden" name="inputId" value="">
-
                                                     <div class="form-group">
                                                         <label for="inputNome" class="col-md-2 control-label">Nome:</label>
                                                         <div class="col-sm-5">
@@ -67,75 +66,36 @@
                                                             <select name="inputMarca" id="inputMarca">
                                                                 <option value="nike">nike</option>
                                                                 <option value="adidas">adidas</option>
+                                                                <option value="bape">bape</option>
+                                                                <option value="supreme">supreme</option>
+                                                                <option value="cactus">cactus</option>
+                                                                <option value="off">off</option>
+                                                                <option value="outras">outras</option>
                                                             </select>
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="inputPeso" class="col-md-2 control-label">Peso:</label>
+                                                        <label for="inputPeso" class="col-md-2 control-label">Peso em G:</label>
                                                         <div class="col-sm-5">
-                                                            <input type="text" class="form-control" name="inputPeso" id="inputPeso" >
+                                                            <input type="number" class="form-control" name="inputPeso" id="inputPeso" >
                                                         </div>
                                                         <label for="inputTipo" class="col-md-1 control-label">Tipo:</label>
                                                         <div class="col-sm-4">
                                                             <select name="inputTipo" id="inputTipo">
-                                                                <option value="">TENIS</option>
-                                                                <option value="">ROUPAS</option>
-                                                                <option value="">ACESSORIOS</option>
+                                                                <option value="tenis">TENIS</option>
+                                                                <option value="roupas">ROUPAS</option>
+                                                                <option value="acessorios">ACESSORIOS</option>
                                                             </select>
                                                         </div>
                                                     </div>                                  
                                                     <div class="form-group">
                                                         <label for="inputPreco" class="col-md-2 control-label">Preço:</label>
                                                         <div class="col-sm-5">
-                                                            <input type="text" class="form-control" name="inputPreco" id="inputPreco" >
-                                                        </div>
-                                                        <fieldset>
-                                                            <legend>Tamanhos</legend>
-                                                            <div>
-                                                            <input type="checkbox" id="scales" name="scales" checked>
-                                                            <label for="scales">35</label>
-                                                            </div>
-                                                            <div>
-                                                            <input type="checkbox" id="scales" name="scales" checked>
-                                                            <label for="scales">36</label>
-                                                            </div>
-                                                            <div>
-                                                            <input type="checkbox" id="scales" name="scales" checked>
-                                                            <label for="scales">37</label>
-                                                            </div>
-                                                            <div>
-                                                            <input type="checkbox" id="scales" name="scales" checked>
-                                                            <label for="scales">38</label>
-                                                            </div>
-                                                            <div>
-                                                            <input type="checkbox" id="scales" name="scales" checked>
-                                                            <label for="scales">39</label>
-                                                            </div>
-                                                            <div>
-                                                            <input type="checkbox" id="scales" name="scales" checked>
-                                                            <label for="scales">40</label>
-                                                            </div>
-                                                            <div>
-                                                            <input type="checkbox" id="scales" name="scales" checked>
-                                                            <label for="scales">41</label>
-                                                            </div>
-                                                            <div>
-                                                            <input type="checkbox" id="scales" name="scales" checked>
-                                                            <label for="scales">42</label>
-                                                            </div>
-                                                            <div>
-                                                            <input type="checkbox" id="scales" name="scales" checked>
-                                                            <label for="scales">43</label>
-                                                            </div>
-                                                            <div>
-                                                            <input type="checkbox" id="horns" name="horns">
-                                                            <label for="horns">45</label>
-                                                            </div>
-                                                        </fieldset>
-
+                                                            <input type="number" class="form-control" name="inputPreco" id="inputPreco" >
+                                                        </div>                                               
                                                         <label for="inputDescricao" class="col-md-3 control-label">Descrição do produto:</label>
                                                         <div class="col-sm-2">
-                                                          <textarea name="inputDescricao" id="inputDescricao" cols="50" rows="3"></textarea>
+                                                          <textarea name="inputDescricao" id="inputDescricao" cols="50" rows="3" ></textarea>
                                                         </div>
                                                         <div class="col-xs-12">
                                                           
@@ -160,7 +120,7 @@
                                                     <div class="box-footer">
                                                         <label for="groupButton"></label>
                                                         <div class="col-sm-3 col-sm-offset-2 pull-left">
-                                                            <button type="submit" id="groupButton" class="btn btn-primary " title="Salvar as alterações">
+                                                            <button type="submit" id="groupButton" class="btn btn-primary " name="salvar" title="Salvar as alterações">
                                                                 <i class="fa fa-save"></i> Salvar dados
                                                             </button>
                                                         </div>

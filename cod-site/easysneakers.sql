@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 03-Nov-2022 às 23:28
+-- Tempo de geração: 29-Nov-2022 às 01:45
 -- Versão do servidor: 10.4.22-MariaDB
 -- versão do PHP: 8.1.2
 
@@ -37,7 +37,7 @@ CREATE TABLE `administrador` (
 --
 
 INSERT INTO `administrador` (`user`, `password`) VALUES
-('1matzz', 'M@7hu%5198');
+('1matzz', '123456');
 
 -- --------------------------------------------------------
 
@@ -77,10 +77,10 @@ INSERT INTO `clientes` (`id`, `nome`, `datanasc`, `telefone`, `cpf`, `email`, `s
 
 CREATE TABLE `produtos` (
   `id` int(10) UNSIGNED NOT NULL,
-  `nome` varchar(255) DEFAULT NULL,
+  `nome` varchar(255) NOT NULL,
   `marca` varchar(20) DEFAULT NULL,
   `peso` varchar(200) DEFAULT NULL,
-  `tipo` varchar(20) DEFAULT NULL,
+  `tipo` varchar(40) DEFAULT NULL,
   `descricao` varchar(255) DEFAULT NULL,
   `preco` varchar(40) DEFAULT NULL,
   `imagem` varchar(255) DEFAULT NULL
@@ -91,11 +91,36 @@ CREATE TABLE `produtos` (
 --
 
 INSERT INTO `produtos` (`id`, `nome`, `marca`, `peso`, `tipo`, `descricao`, `preco`, `imagem`) VALUES
-(13, 'Yeezy 350 V2', 'adidas', '800g', 'tenis', 'Yeezy 350 V2 beluga size 40', '400', '1546eeaf1125225052baa7876c39a146.jpg'),
-(14, 'Air jordan', 'nike', '800g', 'Tenis', 'air jordan 1 shadow', '200', '65ff5e32bad00eab253ca4ce395634ee.jpg'),
-(16, 'Yeezy 350 V2', 'adidas', '750g', 'DSA', 'dadsdsa', '400', '9c04f8c608202cd69e1c0a79ee29d8e6.jpg'),
-(18, 'Air jordan 1', 'nike', '750g', 'Tenis', 'air jordan 1', '200', '0cc1ab0fa36f6bfb7099eac3b4079778.jpg'),
-(19, 'Air jordan 1', 'nike', '750g', 'Tenis', 'sada', '400', 'ff10877a21a56ef9c45bfe9d640507c7.jpg');
+(32, 'Air Jordan 1 Dark Mocha', 'nike', '1500', 'tenis', 'O Air Jordan 1 “Dark Mocha” desenvolve a associação da silhueta atemporal com tons de terra usáveis. A inspiração para o “Dark Mocha”, um lançamento do outono de 2020.', '550', '3453fff3ea01e90e3c4d004158f1b5bc.jpg'),
+(34, 'Air Jordan 1 Smoke Grey', 'nike', '1232', 'tenis', 'O Air Jordan 1 “Light Smoke Grey” é um lançamento do verão 2020 que capta a atenção dos fãs de tênis e colecionadores. \r\n', '650', '365b7ffb9b6cb1c792c488f71900b49b.jpg'),
+(35, 'Camiseta Supreme ', 'supreme', '445', 'roupas', 'Camiseta Supreme preta\r\n', '329', '128f3c05f338617805ca58ed6404846f.png'),
+(36, 'Camiseta Supreme ', 'supreme', '1231', 'roupas', 'Camiseta Supreme preta\r\n', '122', '0280799c62ad7e0baa8a94d65a17df45.png'),
+(37, 'Camiseta Supreme ', 'supreme', '231', 'roupas', 'Camiseta Supreme preta', '420', '041af3c3de4c0d7bef97c4f6bb76314f.png'),
+(38, 'Camiseta Supreme ', 'supreme', '445', 'roupas', 'Camiseta Supreme branca', '155', '8d95e7bb7a79deb569f924f54d616465.png'),
+(40, 'Gorro Supreme', 'supreme', '231', 'acessorios', 'Gorro Supreme preto', '420', '9b36475971bdbdffb6a26878271929dd.png'),
+(41, 'Moletom Supreme ', 'supreme', '1231', 'roupas', 'Moletom Supreme azul', '420', '8a6346923df7fef19834e5f1ff6494d0.png');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `vendas`
+--
+
+CREATE TABLE `vendas` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `nome_prod` varchar(60) DEFAULT NULL,
+  `marca_prod` varchar(60) DEFAULT NULL,
+  `tamanho_prod` int(11) DEFAULT NULL,
+  `tipo_prod` varchar(60) DEFAULT NULL,
+  `qnt_prod` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `vendas`
+--
+
+INSERT INTO `vendas` (`id`, `nome_prod`, `marca_prod`, `tamanho_prod`, `tipo_prod`, `qnt_prod`) VALUES
+(2, '', '', 40, '', 0);
 
 --
 -- Índices para tabelas despejadas
@@ -120,6 +145,12 @@ ALTER TABLE `produtos`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Índices para tabela `vendas`
+--
+ALTER TABLE `vendas`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT de tabelas despejadas
 --
 
@@ -127,13 +158,19 @@ ALTER TABLE `produtos`
 -- AUTO_INCREMENT de tabela `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de tabela `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+
+--
+-- AUTO_INCREMENT de tabela `vendas`
+--
+ALTER TABLE `vendas`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

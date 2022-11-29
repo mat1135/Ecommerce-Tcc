@@ -18,6 +18,7 @@ class Cliente
     {
         if ($id) {
             $this->id = $id;
+            $this->carregar();
         }
     }
     
@@ -46,8 +47,6 @@ class Cliente
             '" . $this->numero . "',
             '" . $this->bairro . "',
             '" . $this->cidade . "')";        
-        //echo $sql;
-        //die();
         $conexao = new PDO('mysql:host=127.0.0.1;dbname=easysneakers', 'root', '');
         $conexao->exec($sql); 
     }
