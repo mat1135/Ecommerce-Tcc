@@ -33,6 +33,7 @@ class Cliente
         return $lista;       
     }
 
+
     public function inserir()
     {
         $sql = "INSERT INTO clientes (nome, datanasc, telefone, cpf, email, senha, cep, rua, numero, bairro, cidade) VALUES (

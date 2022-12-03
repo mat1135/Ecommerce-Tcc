@@ -13,14 +13,16 @@ session_start();
         </div>
 
         <?php
-        if (!empty($_POST['user_logado'])) {
-          echo'<div class="col-md-3 offset-md-4" style="margin-bottom: auto; margin-top: auto;">
-          <img src="../images/person-fill.svg" alt="">
-            nome de usuario
-          <a class="color-detail" href="dadoscli.php" style="text-decoration: none;">minha conta</a> 
-          <a class="color-detail" href="cadastro.php" style="text-decoration: none;">meus pedidos</a> 
-          <a class="color-detail" href="user-logout.php">sair</a>
-          </div>';
+        if (isset($_SESSION['user_logado'])) {
+
+          echo"<div class='col-md-5 offset-md-2' style='margin-bottom: auto; margin-top: auto;'>
+          <img src='../images/person-fill.svg'>";
+           echo  $_SESSION['user_logado'];
+          echo"<a class='color-detail' style='padding: 10px' href='dadoscli.php?id=6>' style='text-decoration: none;'>minha conta</a> 
+          <a class='color-detail' style'padding: 10p' href='#' style='text-decoration: none;'>meus pedidos</a> 
+          <a class='color-detail' style='padding: 10px' href='user-logout.php'>sair</a>
+          </div>";
+
         }
 
         else {

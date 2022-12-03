@@ -1,6 +1,6 @@
 <?php
 	require_once '../classes/Cliente.php';
-	$id = 3;
+	$id = 6;
   	$cliente = new Cliente($id);
 ?>
 
@@ -94,7 +94,7 @@
     };
 
     </script>
-  <?php include_once "menu.html" ?>
+  <?php include_once "menu.php" ?>
 
   <!-- end header section -->
 

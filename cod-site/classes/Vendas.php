@@ -12,6 +12,7 @@ class Venda
     {
         if ($id) {
             $this->id = $id;
+            $this->carregar();
         }
     }
     

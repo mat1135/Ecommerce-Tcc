@@ -32,15 +32,6 @@
     <div class="logcad-linha"></div>
     <section class="area-login">
         <div class="login">
-          <?php
-            if(isset($_SESSION['erro'])){
-            echo'<div class="alert alert-danger">
-            <p>ERRO: email ou senha incorretos.</p>
-            </div>';
-          }
-            unset($_SESSION['erro']);
-            ?>
-
             <div>
                 <img src="../images/EASYpng.png" alt="">
             </div>

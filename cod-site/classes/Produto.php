@@ -98,7 +98,7 @@ class Produto
     
     public function consBape()
     {
-        $sql = "SELECT * FROM produtos  WHERE marca = 'bape'";   
+        $sql = "SELECT * FROM produtos  WHERE marca = 'Bape'";   
         $conexao = new PDO('mysql:host=127.0.0.1;dbname=easysneakers', 'root', '');
         $resultado = $conexao->query($sql);
         $lista = $resultado->fetchAll();

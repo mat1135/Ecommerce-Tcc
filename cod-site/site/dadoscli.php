@@ -1,7 +1,7 @@
 <?php
 	require_once '../classes/Cliente.php';
-	$id = 2;
-  	$cliente = new Cliente($id);
+	$id = 6;
+  $cliente = new Cliente($id);
 ?>
 <!DOCTYPE html>
 <html>

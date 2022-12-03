@@ -30,7 +30,7 @@
   <input class="form-control form-control-dark w-100 rounded-0 border-0" type="text" placeholder="Pesquisar" aria-label="Search">
   <div class="navbar-nav">
     <div class="nav-item text-nowrap">
-      <a class="nav-link px-3" href="tllog.html">Sair</a>
+      <a class="nav-link px-3" href="adm-logout.php">Sair</a>
     </div>
   </div>
 </header>
@@ -68,7 +68,7 @@
                                             <td><?php echo $linha['tipo_prod'] ?></a></td>
                                             <td><?php echo $linha['qnt_prod'] ?></a></td>
                                             <td>
-                                            <a href="#" class="btn btn-sm btn-outline-dark">Visualizar</a>                                                    
+                                            <a href="vzprod.php?id=<?php echo $linha['id'] ?>" class="btn btn-sm btn-outline-dark">Visualizar</a>                                                    
                                             </td>
                                         </tr>
                                     <?php endforeach ?>                          

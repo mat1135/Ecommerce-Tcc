@@ -16,7 +16,7 @@ else {
 	session_start();
 	$_SESSION['adm_logado'] = $user_logado;	
     echo "Adm Logado<br> Session_id: ".$_SESSION['adm_logado'];
-	header('Location: indexadm.php');
+	header('Location: painel.php');
 }
 
 die();

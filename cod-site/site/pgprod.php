@@ -25,6 +25,17 @@
   <link href="../css/bootstrap.css" rel="stylesheet" /> 
   <link href="../css/alteracoes.css" rel="stylesheet" />
 
+  <style>
+    input{
+      border: none;
+    }
+
+    strong{
+      font-size: 35px;
+      margin-left: 5px;
+    }
+  </style>
+
 </head>
 
 <body>
@@ -43,22 +54,18 @@
       <form action="vendas-gravar.php" method="POST" onsubmit="return checkCheckBox(this)" enctype="multipart/form-data">
       <section class="form-group">
         <article class="produtos-conteudo"> 
-          <h1 name="inputNomeProd" id="inputNomeProd">
-            <?php echo $produto->nome ?>           
-          </h1>
+          <h1>
+          <input type="text" name="inputNomeProd" id="inputNomeProd" value="<?php echo $produto->nome ?>" readonly>  
+          </h1>      
           <span class="pprod">
             Marca:
           </span>
-          <span name="inputMarcaProd" id="inputMarcaProd">
-            <?php echo $produto->marca ?>
-          </span>
+          <input name="inputMarcaProd" id="inputMarcaProd" value="<?php echo $produto->marca ?>" readonly>
           <br>
           <span class="pprod">
             Tipo:
           </span>
-          <span name="inputTipoProd" id="inputTipoProd">
-            <?php echo $produto->tipo ?>
-          </span>
+          <input name="inputTipoProd" id="inputTipoProd" value="<?php echo $produto->tipo ?>" readonly>
           <br>
           <label for="inputTamanhoProd" class="pprod control-label">Tamanhos:</label>
             <div class="form-group">
@@ -69,6 +76,7 @@
                 <option value="42">42</option>
               </select>
             </div>    
+            
           <label for="inputQtnProd" class="pprod control-label">Quantidade:</label>
             <div class="form-group">
               <select class="form-control col-sm-5" name="inputQtnProd" id="inputQtnProd">
@@ -77,6 +85,10 @@
                 <option value="3">3</option>
               </select>
             </div> 
+            <strong>
+              <span  style="font-size:15px; background-color: #ddd; padding: 5px; border-radius: 100px;">R$</span><?php echo $produto->preco ?>
+              <span class="d-block" style="font-size: 16px;">em até 12x no cartão</span>
+            </strong>
             <button onclick="compraFinalizada" type="submit" class="btn btn-success col-md-12">Comprar</button>
         </article>
       </section>
