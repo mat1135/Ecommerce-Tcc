@@ -128,10 +128,10 @@
                 <input type="text" name="inputCidade" id="inputCidade" placeholder="digite seu cidade">
 
                 <p class="p-logcad">Email:</p>
-                <input type="email" name="inputEmail" id="inputEmail" placeholder="digite seu cidade">
+                <input type="email" name="inputEmail" id="inputEmail" placeholder="digite seu email">
 
                 <p class="p-logcad">Senha:</p>
-                <input type="password" name="inputSenha" id="inputSenha" placeholder="digite seu cidade">
+                <input type="password" name="inputSenha" id="inputSenha" placeholder="digite seu senha">
 
                 <input type="submit" value="Cadastrar">
             </form>
